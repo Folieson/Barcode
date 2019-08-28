@@ -37,5 +37,26 @@ public class HistoryActivity extends Activity {
         products.add(new Product("E1234", "name","brand"));
         products.add(new Product("E5678", "another name","another brand"));
         products.add(new Product("E2345", "name3","brand3"));
+        products.add(new Product("E1234", "name","brand"));
+        products.add(new Product("E5678", "another name","another brand"));
+        products.add(new Product("E2345", "name3","brand3"));
+        products.add(new Product("E1234", "name","brand"));
+        products.add(new Product("E5678", "another name","another brand"));
+        products.add(new Product("E2345", "name3","brand3"));
+        products.add(new Product("E1234", "name","brand"));
+        products.add(new Product("E5678", "another name","another brand"));
+        products.add(new Product("E2345", "name3","brand3"));
+        products.add(new Product("E1234", "name","brand"));
+        products.add(new Product("E5678", "another name","another brand"));
+        products.add(new Product("E2345", "name3","brand3"));
+        products.add(new Product("E1234", "name","brand"));
+        products.add(new Product("E5678", "another name","another brand"));
+        products.add(new Product("E2345", "name3","brand3"));
+        products.add(new Product("E1234", "name","brand"));
+        products.add(new Product("E5678", "another name","another brand"));
+        products.add(new Product("E2345", "name3","brand3"));
+        products.add(new Product("E1234", "name","brand"));
+        products.add(new Product("E5678", "another name","another brand"));
+        products.add(new Product("E2345", "name3","brand3"));
     }
 }
