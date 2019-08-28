@@ -1,16 +1,15 @@
 package com.example.barcode;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.SparseArray;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.media.Image;
-import android.view.View;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.vision.Frame;
 import com.google.android.gms.vision.barcode.Barcode;
@@ -33,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
                 //перевод в растровое изображение
                 Bitmap myBitmap = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.qr);
                 myimageView.setImageBitmap(myBitmap);
-                //Поюраюотка кода
+                //Проработка кода
                 BarcodeDetector barcodeDetector = new BarcodeDetector.Builder(getApplicationContext())
                     .setBarcodeFormats(Barcode.DATA_MATRIX | Barcode.QR_CODE)
                     .build();
