@@ -13,17 +13,17 @@ import java.util.List;
 
 public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ViewHolder> {
 
-    public List<Product> productList;
+    private List<Product> productList;
 
-    public RVAdapter(List<Product> productList) {
+    RVAdapter(List<Product> productList) {
         this.productList = productList;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView name, brand, id;
 
-        public ViewHolder(View itemView) {
+        ViewHolder(View itemView) {
             super(itemView);
             name = (TextView) itemView.findViewById(R.id.tvName);
             brand = (TextView) itemView.findViewById(R.id.tvBrand);
