@@ -1,4 +1,4 @@
-package com.example.barcode;
+package com.example.barcode.activity;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -11,24 +11,28 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.barcode.R;
 import com.google.android.gms.vision.Frame;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
 
 public class MainActivity extends AppCompatActivity {
 
+    NavBar bar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final TextView txtView = (TextView) findViewById(R.id.txtContent);
+        final TextView txtView = findViewById(R.id.txtContent);
+        bar = new NavBar();
 
-        Button btn = (Button) findViewById(R.id.button);
+        Button btn = findViewById(R.id.button);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ImageView myimageView = (ImageView)findViewById(R.id.imgview);
+                ImageView myimageView = findViewById(R.id.imgview);
                 //перевод в растровое изображение
                 Bitmap myBitmap = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.qr);
                 myimageView.setImageBitmap(myBitmap);
