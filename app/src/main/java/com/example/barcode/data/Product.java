@@ -1,4 +1,4 @@
-package com.example.barcode.Data;
+package com.example.barcode.data;
 
 public class Product {
     private String id;

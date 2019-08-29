@@ -1,4 +1,4 @@
-package com.example.barcode;
+package com.example.barcode.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -6,7 +6,9 @@ import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.barcode.Data.Product;
+import com.example.barcode.data.Product;
+import com.example.barcode.R;
+import com.example.barcode.adapter.RVAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +23,7 @@ public class HistoryActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.resycler_view);
 
-        rvTeams = (RecyclerView) findViewById(R.id.rv);
+        rvTeams = findViewById(R.id.rv);
 
         setProductsData();
 

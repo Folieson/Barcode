@@ -1,37 +1,40 @@
-package com.example.barcode;
+package com.example.barcode.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.barcode.Data.Product;
+import com.example.barcode.data.Product;
+import com.example.barcode.R;
 
 import java.util.List;
 
 public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ViewHolder> {
 
-    public List<Product> productList;
+    private List<Product> productList;
 
     public RVAdapter(List<Product> productList) {
         this.productList = productList;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView name, brand, id;
 
-        public ViewHolder(View itemView) {
+        ViewHolder(View itemView) {
             super(itemView);
-            name = (TextView) itemView.findViewById(R.id.tvName);
-            brand = (TextView) itemView.findViewById(R.id.tvBrand);
-            id = (TextView) itemView.findViewById(R.id.tvId);
+            name = itemView.findViewById(R.id.tvName);
+            brand = itemView.findViewById(R.id.tvBrand);
+            id = itemView.findViewById(R.id.tvId);
 
         }
     }
 
+    @NonNull
     public RVAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_row,parent, false);
 
