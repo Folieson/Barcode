@@ -2,19 +2,20 @@ package com.example.barcode.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.barcode.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class NavBar extends AppCompatActivity {
 
-    ImageView imgFavorites;
-    ImageView imgFriends;
-    ImageView imgRecents;
+    BottomNavigationView bottomNavigationView;
 
     Button btn_his;
     Button btn_camera;
@@ -25,6 +26,31 @@ public class NavBar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nav_bar);
 
+        bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        Intent intent;
+                        switch (item.getItemId()) {
+                            case R.id.action_history:
+                                intent = new Intent(NavBar.this, HistoryActivity.class);
+                                startActivity(intent);
+                                return true;
+                            case R.id.action_camera:
+                                intent = new Intent(NavBar.this, CameraActivity.class);
+                                startActivity(intent);
+                                return true;
+                            case R.id.action_gallery:
+                                intent = new Intent(NavBar.this, GalleryActivity.class);
+                                startActivity(intent);
+                                return true;
+                        }
+                        return false;
+                    }
+                });
+/*
         btn_his = findViewById(R.id.btn_history);
         btn_his.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,40 +76,10 @@ public class NavBar extends AppCompatActivity {
                 Intent intent = new Intent(NavBar.this, GalleryActivity.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
-/*
-        imgFavorites = (ImageView) findViewById(R.id.action_favorites);
-        imgFriends = (ImageView) findViewById(R.id.action_friends);
-        imgRecents = (ImageView) findViewById(R.id.action_recents);
 
-        BottomNavigationView bottomNavigationView = (BottomNavigationView)
-                findViewById(R.id.bottom_navigation);
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(
-                new BottomNavigationView.OnNavigationItemSelectedListener() {
-                    @Override
-                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                        switch (item.getItemId()) {
-                            case R.id.action_favorites:
-                                imgFavorites.setVisibility(View.VISIBLE);
-                                imgFriends.setVisibility(View.GONE);
-                                imgRecents.setVisibility(View.GONE);
-                                break;
-                            case R.id.action_friends:
-                                imgFavorites.setVisibility(View.GONE);
-                                imgFriends.setVisibility(View.VISIBLE);
-                                imgRecents.setVisibility(View.GONE);
-                                break;
-                            case R.id.action_recents:
-                                imgFavorites.setVisibility(View.GONE);
-                                imgFriends.setVisibility(View.GONE);
-                                imgRecents.setVisibility(View.VISIBLE);
-                                break;
-                        }
-                        return false;
-                    }
-                });*/
     }
 }
 

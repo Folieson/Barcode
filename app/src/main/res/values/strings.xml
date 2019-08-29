@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">Barcode</string>
     <string name="hey">hop hey lalaley ^^!</string>
-    <string name="favorites">1</string>
-    <string name="friends">2</string>
-    <string name="recents">3</string>
-    <string name="title_activity_main2">Main2Activity</string>
+    <string name="history">История</string>
+    <string name="camera">Камера</string>
+    <string name="gallery">Галерея</string>
 </resources>

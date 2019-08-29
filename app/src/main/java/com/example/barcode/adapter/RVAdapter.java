@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.barcode.R;
 import com.example.barcode.activity.ReportActivity;
 import com.example.barcode.data.Product;
+import com.example.barcode.data.ProductsList;
 
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ViewHolder> {
     private List<Product> productList;
     private Context mContext;
 
-    public RVAdapter(Context context, List<Product> productList) {
+    public RVAdapter(Context context, ProductsList productList) {
         this.productList = productList;
         this.mContext = context;
     }
