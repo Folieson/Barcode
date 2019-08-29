@@ -20,6 +20,8 @@ public class HistoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.resycler_view);
 
+        new NavBar();
+
         rvTeams = findViewById(R.id.rv);
 
         adapter = new RVAdapter(this, products);
