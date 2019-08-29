@@ -1,6 +1,5 @@
 package com.example.barcode.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.BitmapFactory;
@@ -13,7 +12,7 @@ import android.widget.ImageView;
 
 import com.example.barcode.R;
 
-public class GalleryActivity extends Activity {
+public class GalleryActivity extends NavBar {
     private static int RESULT_LOAD_IMAGE = 1;
     /** Called when the activity is first created. */
     @Override
