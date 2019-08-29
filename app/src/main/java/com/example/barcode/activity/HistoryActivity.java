@@ -1,21 +1,18 @@
 package com.example.barcode.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.barcode.data.Product;
 import com.example.barcode.R;
 import com.example.barcode.adapter.RVAdapter;
+import com.example.barcode.data.ProductsList;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class HistoryActivity extends Activity {
+public class HistoryActivity extends AppCompatActivity {
     RecyclerView rvTeams;
-    List<Product> products = new ArrayList<>();
+    ProductsList products = new ProductsList();
     RVAdapter adapter;
 
     @Override
@@ -25,40 +22,9 @@ public class HistoryActivity extends Activity {
 
         rvTeams = findViewById(R.id.rv);
 
-        setProductsData();
-
-        adapter = new RVAdapter(products);
+        adapter = new RVAdapter(this, products);
         RecyclerView.LayoutManager manager = new LinearLayoutManager(getApplicationContext());
         rvTeams.setLayoutManager(manager);
         rvTeams.setAdapter(adapter);
-
-
-    }
-
-    private void setProductsData() {
-        products.add(new Product("E1234", "name","brand"));
-        products.add(new Product("E5678", "another name","another brand"));
-        products.add(new Product("E2345", "name3","brand3"));
-        products.add(new Product("E1234", "name","brand"));
-        products.add(new Product("E5678", "another name","another brand"));
-        products.add(new Product("E2345", "name3","brand3"));
-        products.add(new Product("E1234", "name","brand"));
-        products.add(new Product("E5678", "another name","another brand"));
-        products.add(new Product("E2345", "name3","brand3"));
-        products.add(new Product("E1234", "name","brand"));
-        products.add(new Product("E5678", "another name","another brand"));
-        products.add(new Product("E2345", "name3","brand3"));
-        products.add(new Product("E1234", "name","brand"));
-        products.add(new Product("E5678", "another name","another brand"));
-        products.add(new Product("E2345", "name3","brand3"));
-        products.add(new Product("E1234", "name","brand"));
-        products.add(new Product("E5678", "another name","another brand"));
-        products.add(new Product("E2345", "name3","brand3"));
-        products.add(new Product("E1234", "name","brand"));
-        products.add(new Product("E5678", "another name","another brand"));
-        products.add(new Product("E2345", "name3","brand3"));
-        products.add(new Product("E1234", "name","brand"));
-        products.add(new Product("E5678", "another name","another brand"));
-        products.add(new Product("E2345", "name3","brand3"));
     }
 }

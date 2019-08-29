@@ -4,33 +4,27 @@ public class Product {
     private String id;
     private String name;
     private String brand;
-    public Product(String id, String name, String brand) {
+    private String category;
+    private String country;
+    Product(String id, String name, String brand, String category, String country) {
         this.id = id;
         this.name = name;
         this.brand = brand;
+        this.category = category;
+        this.country = country;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
+    public String getBrand() { return brand; }
 
     public String getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+    public String getCategory() { return category; }
+
+    public String getCountry() { return country; }
 }
