@@ -33,4 +33,16 @@ public class ProductsList extends ArrayList<Product> {
         this.add(new Product("E5678", "another name","another brand", "another category", "another brand"));
         this.add(new Product("E2345", "name3","brand3", "category3", "country3"));
     }
+
+    public Product getProductById(String id) {
+        Product result = new Product();
+        for(Product product: this) {
+            if (product.getId().equals(id)) {
+                result = product;
+                break;
+            }
+        }
+        return result;
+    }
+
 }

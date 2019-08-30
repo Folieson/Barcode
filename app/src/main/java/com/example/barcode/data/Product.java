@@ -13,6 +13,13 @@ public class Product {
         this.category = category;
         this.country = country;
     }
+    Product(){
+        this.id = "";
+        this.name = "";
+        this.brand = "";
+        this.category = "";
+        this.country = "";
+    }
 
     public String getName() {
         return name;
