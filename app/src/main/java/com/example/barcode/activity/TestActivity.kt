@@ -76,8 +76,6 @@ class TestActivity : AppCompatActivity(), LifecycleOwner {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.test_camx)
 
-        // Add this at the end of onCreate function
-
         viewFinder = findViewById(R.id.view_finder)
 
         // Request camera permissions
@@ -93,8 +91,6 @@ class TestActivity : AppCompatActivity(), LifecycleOwner {
             updateTransform()
         }
     }
-
-    // Add this after onCreate
 
     private lateinit var viewFinder: TextureView
 
@@ -178,7 +174,6 @@ class TestActivity : AppCompatActivity(), LifecycleOwner {
     }
 
     private fun updateTransform() {
-        // TODO: Implement camera viewfinder transformations
         val matrix = Matrix()
 
         // Compute the center of the view finder
