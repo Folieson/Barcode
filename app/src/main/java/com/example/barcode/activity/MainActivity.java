@@ -18,6 +18,31 @@ import com.google.android.gms.vision.barcode.BarcodeDetector;
 
 public class MainActivity extends AppCompatActivity {
 
+    public MainActivity (ImageView img, Bitmap bit, TextView txt) {
+        TextView txtView = txt;
+        //Проработка кода
+        BarcodeDetector barcodeDetector = new BarcodeDetector.Builder(getApplicationContext())
+                .setBarcodeFormats(Barcode.DATA_MATRIX | Barcode.QR_CODE)
+                .build();
+        if (!barcodeDetector.isOperational()) {
+            txtView.setText("Не работает детектор");
+            return;
+        }
+        //Создаем кадр для передачи изображения
+        Frame frame = new Frame.Builder().setBitmap(bit).build();
+        SparseArray<Barcode> barcodes = barcodeDetector.detect(frame);
+        if (barcodes.size() == 0) {
+            txtView.setText("Код не найден");
+            return;
+        }
+        //Так как у нас всего один код
+        Barcode thisCode = barcodes.valueAt(0);
+        txtView.setText(thisCode.rawValue);
+        img.setImageBitmap(bit);
+
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
