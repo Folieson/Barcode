@@ -3,9 +3,7 @@ package com.example.barcode.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,7 +37,7 @@ public class NavBar extends AppCompatActivity {
                                 startActivity(intent);
                                 return true;
                             case R.id.action_camera:
-                                intent = new Intent(NavBar.this, CameraActivity.class);
+                                intent = new Intent(NavBar.this, CameraActivity2.class);
                                 startActivity(intent);
                                 return true;
                             case R.id.action_gallery:
